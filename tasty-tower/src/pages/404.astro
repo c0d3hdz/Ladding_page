@@ -1,0 +1,44 @@
+---
+const title = "Página no encontrada";
+const message = "Lo sentimos, la página que estás buscando no existe.";
+
+import Background from '../components/background.astro';
+import Layout from '../layouts/Layout.astro';
+---
+<Layout title="Index">
+<div class="container">
+    <Background />
+    <h1>404 - {title}</h1>
+    <p>{message}</p>
+    <a href="/">Volver al Inicio</a>
+</div>
+</Layout>
+
+
+
+
+    <style>
+        .container {
+            margin: auto;
+            text-align: center;
+            max-width: 600px;
+        }
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: #47ff69;
+        }
+        p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+        a {
+            text-decoration: none;
+            color: #007bff;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+        a:hover {
+            color: #0056b3;
+        }
+    </style>

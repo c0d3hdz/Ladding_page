@@ -1,0 +1,64 @@
+---
+const navItems = [
+    { name: "Inicio", url: "/" },
+    { name: "Servicios", url: "/servicios" },
+    { name: "Sobre Nosotros", url: "/sobre-nosotros" },
+    { name: "Contacto", url: "/contacto" },
+];
+
+const currentUrl = Astro.url.pathname;
+---
+
+<header class="header">
+    <div class="logo">Mi Sitio Web</div>
+    <nav class="nav-links">
+        {navItems.map((item) => (
+        <a
+            href={item.url}
+            class={currentUrl === item.url ? "active" : ""}
+        >
+            {item.name}
+        </a>
+        ))}
+    </nav>
+</header>
+
+
+<style>
+    .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 2rem 2rem;
+        background-color: #ffffff;
+        color: rgb(59, 59, 59);
+    }
+
+    .nav-links {
+        display: flex;
+        gap: 1.8rem;
+        font-weight: bolder;
+        font-size: large;
+    }
+
+    .nav-links a {
+        color: rgb(0, 0, 0);
+        text-decoration: none;
+        transition: color 0.3s;
+    }
+
+    .nav-links a.active {
+        color: #c6e465;
+        text-decoration: underline;
+    }
+
+    .nav-links a:hover {
+        color: #bbbbbb;
+    }
+    @media (max-width: 450px) {
+        .header{
+            display: none;
+        }
+
+    }
+</style>
