@@ -23,7 +23,7 @@ import Background from '../components/background.astro';
 	<body>
 		<ViewTransitions />
 		<Background />
-		<Header transition:persist/>
+		<Header client:load transition:persist/>
 		<slot />
 	</body>
 </html>
